@@ -1,0 +1,55 @@
+<tal:block tal:define="runtime_info view/runtimeInfo" i18n:domain="zope">
+  <h2 i18n:translate="">Zope Runtime Information</h2>
+
+  <div class="z-table-container">
+    <table class="z-table">
+      <tbody>
+	<tr class="even">
+	  <th i18n:translate="">Uptime</th>
+	  <td i18n:translate="" tal:content="runtime_info/Uptime">Time</td>
+	</tr>
+	<tr class="odd">
+	  <th i18n:translate="">System platform</th>
+	  <td tal:content="runtime_info/SystemPlatform">Platform</td>
+	</tr>
+	<tr class="even">
+	  <th i18n:translate="">Zope version</th>
+	  <td tal:content="runtime_info/ZopeVersion">Version</td>
+	</tr>
+	<tr class="odd">
+	  <th i18n:translate="">Python version</th>
+	  <td tal:content="runtime_info/PythonVersion">Version</td>
+	</tr>
+	<tr class="even">
+	  <th i18n:translate="">Command line</th>
+	  <td tal:content="runtime_info/CommandLine">Command line</td>
+	</tr>
+	<tr class="odd">
+	  <th i18n:translate="">Preferred encoding</th>
+	  <td tal:content="runtime_info/PreferredEncoding">Encoding</td>
+	</tr>
+	<tr class="even">
+	  <th i18n:translate="">FileSystem encoding</th>
+	  <td tal:content="runtime_info/FileSystemEncoding">Encoding</td>
+	</tr>
+	<tr class="odd">
+	  <th i18n:translate="">Process id</th>
+	  <td tal:content="runtime_info/ProcessId">ID</td>
+	</tr>
+	<tr class="even">
+	  <th i18n:translate="">Developer mode</th>
+	  <td tal:content="runtime_info/DeveloperMode">ID</td>
+	</tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="z-form-fieldset">
+    <h2 i18n:translate="">Python path</h2>
+    <div class="field">
+      <ul>
+        <li tal:repeat="path runtime_info/PythonPath" 
+	    tal:content="path">path</li>
+      </ul>
+    </div>
+  </div>
+</tal:block>

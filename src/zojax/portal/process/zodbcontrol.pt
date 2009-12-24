@@ -1,0 +1,52 @@
+<tal:block i18n:domain="zope">
+<h2 i18n:translate="">ZODB Controller</h2>
+
+<div class="z-table-container">
+  <table class="z-table">
+    <thead>
+      <tr>
+	<th i18n:translate="">Pack</th>
+	<th i18n:translate="">Utility Name</th>
+	<th i18n:translate="">Database Name</th>
+	<th i18n:translate="">Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tal:repeat="db view/databases">
+        <td>
+          <input type="checkbox" name="dbs:list"
+                 tal:attributes="value db/utilName"/>
+        </td>
+        <td>
+          <span tal:replace="db/utilName"/>
+        </td>
+	<td>
+          <span tal:replace="db/dbName"/>
+        </td>
+        <td>
+          <span i18n:translate="" tal:replace="db/size"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    
+<hr />
+<div class="z-form-fieldset">
+  <div class="z-form-field">
+    <label i18n:translate="">Keep up to</label>
+    <div>
+      <input type="text" size="4" name="days" value="0"
+             tal:attributes="value request/days|string:0" />
+      <span tal:omit-tag="" i18n:translate="">days</span>
+    </div>
+  </div>
+
+  <div>
+    <hr />
+    <input type="submit" name="PACK" value="Pack" class="z-form-button"
+           i18n:attributes="value pack-button"/>
+  </div>
+</div>
+
+</tal:block>

@@ -1,0 +1,189 @@
+============
+zojax portal
+============
+
+    >>> from zope import component, interface
+    >>> from zope.testbrowser.testing import Browser
+    >>> from zope.app.component.hooks import setSite
+    >>> from zope.app.testing.functional import getRootFolder
+
+    >>> root = getRootFolder()
+
+    >>> actor = Browser()
+    >>> actor.handleErrors = False
+    >>> actor.addHeader("Authorization", "Basic mgr:mgrpw")
+
+
+Edit
+----
+
+    >>> actor.open('http://localhost/context.html/content/')
+    >>> actor.getControl('Title').value = u'Portal'
+    >>> actor.getControl('Description').value = u'zojax portal'
+    >>> actor.getControl(name='content.edit.buttons.save').click()
+    >>> actor.getLink('View').click()
+
+    >>> actor.open('http://localhost/listing.html')
+    >>> print actor.contents
+    <!DOCTYPE html PUBLIC...
+    ...
+    ...<h1 class="z-content-title">Portal</h1>...
+    ...<div class="z-content-description">zojax portal</div>...
+    ...
+    </html>
+
+    >>> setSite(root)
+
+
+Default values
+--------------
+
+IIntId
+
+    >>> from zope.app.intid.interfaces import IIntIds
+    >>> component.getUtility(IIntIds)
+    <...IntIds ...>
+
+IPrincipalAnnotationUtility
+
+    >>> from zope.app.principalannotation.interfaces import IPrincipalAnnotationUtility
+    >>> component.getUtility(IPrincipalAnnotationUtility)
+    <...PrincipalAnnotationUtility ...>
+
+IAuthentication
+
+    >>> from zope.app.security.interfaces import IAuthentication
+    >>> component.getUtility(IAuthentication)
+    <zojax.authentication.authentication.PluggableAuthentication ...>
+
+Skin - zojax
+
+    >>> from zojax.skintool.interfaces import ISkinTool
+    >>> component.getUtility(ISkinTool).skin
+    u'zojax'
+
+    >>> component.getUtility(ISkinTool).layers
+    []
+
+Catalog
+
+    >>> from zojax.catalog.interfaces import ICatalog
+    >>> component.getUtility(ICatalog)
+    <zojax.catalog.catalog.Catalog ...>
+
+
+Workspaces
+----------
+
+People workspace
+
+    >>> from zojax.personal.space.interfaces import IPersonalSpaceManager
+    >>> IPersonalSpaceManager.providedBy(root['people'])
+    True
+
+    >>> actor.open('http://localhost/context.html/content/')
+    >>> actor.getLink('Workspaces').click()
+    >>> print actor.contents
+    <!DOCTYPE html PUBLIC
+    ...
+    <div class="z-listing-details">
+        <span>Overview</span>
+        <div>Space customizable overview.</div>
+    </div>
+    ...
+    <div class="z-listing-details">
+        <span>News</span>
+        <div>A news workspace that will show all space news.</div>
+    </div>
+    ...
+    <div class="z-listing-details">
+        <span>Documents</span>
+        <div>Documents workspace.</div>
+    </div>
+    ...
+    <div class="z-listing-details">
+        <span>People</span>
+        <div>Personal spaces for members.</div>
+    </div>
+    ...
+    </html>
+
+
+CA Registries configlet
+-----------------------
+
+    >>> actor.getLink('System settings').click()
+    >>> actor.getLink('Zope CA registries').click()
+
+
+CA Registrations configlet
+--------------------------
+
+    >>> actor.getLink('Zope CA registrations').click()
+    >>> print actor.contents
+    <!DOCTYPE html PUBLIC...
+    ...
+    <h1>Registrations for this portal</h1>
+    ...
+    </html>
+
+
+Instance process configlet
+--------------------------
+
+    >>> actor.getLink('System settings').click()
+    >>> 'Zope application control' in actor.contents
+    True
+
+
+Portal Access
+-------------
+
+Open
+
+    >>> actor.open('http://localhost/context.html/security/')
+    >>> print actor.contents
+    <!DOCTYPE html PUBLIC
+    ...
+    <div class="z-listing-icon">
+        <input type="radio" name="portal.access" value="open" checked="True" />
+    </div>
+    <div class="z-listing-details">
+        <span>Open</span>
+        <div>Anyone can view site data.</div>
+    </div>
+    ...
+    </html>
+
+    >>> anonymous = Browser()
+    >>> anonymous.handleErrors = False
+    >>> anonymous.open('http://localhost/')
+    >>> print anonymous.contents
+    <!DOCTYPE html PUBLIC...
+    ...
+    ...<div class="z-portlet portlet-recent-content ">
+      <h2 class="z-portlet-header">
+        <a class="z-portlet-feed" title="RSS feed" href="http://localhost/@@feeds/contents">
+          <img src="http://localhost/@@/rss-icon.png" />
+        </a>
+        Recent content
+      </h2>
+      <div class="z-portlet-body">
+        ...
+      </div>
+    </div>...
+    ...
+    </html>
+
+
+Private
+
+    >>> actor.getControl(name="portal.access").value = ["private"]
+    >>> actor.getControl(name="portal.access.save").click()
+
+    >>> anonymous.open('http://localhost/')
+    Traceback (most recent call last):
+    ...
+    Unauthorized: (..., 'browserDefault', 'zojax.AccessPortal')
+
+    >>> setSite(None)

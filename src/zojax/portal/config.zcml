@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <subscriber
+     for=".interfaces.IPortal
+          zope.app.container.interfaces.IObjectAddedEvent"
+     handler=".config.reconfigurePortal" />
+
+  <adapter name="basic"
+	   factory=".config.BasicPortalConfiguration" />
+
+  <adapter name="authentication"
+	   factory=".config.AuthenticationConfiguration" />
+
+  <adapter name="contenttypes"
+	   factory=".config.ContentTypesConfiguration" />
+
+  <!-- skin -->
+  <adapter name="zojax.portal-columns"
+	   factory=".configskin.ConfigureExtension" />
+
+</configure>

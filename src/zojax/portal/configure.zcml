@@ -1,0 +1,54 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   i18n_domain="zojax.portal">
+
+  <permission
+     id="zojax.AccessPortal"
+     title="Access portal" />
+
+  <zojax:configlet
+     name="system.caregistrations"
+     schema=".interfaces.IPortalRegistrations"
+     title="Zope CA registrations"
+     permission="zope.ManageServices" />
+
+  <zojax:configlet
+     name="system.registries"
+     schema=".interfaces.IPortalRegistries"
+     title="Zope CA registries"
+     permission="zope.ManageServices" />
+
+  <!-- default portal permissions -->
+  <permissions for="zope.app.component.interfaces.ISite" name="site.default">
+    <grantAll permission="zope.View" />
+    <grantAll permission="zope.app.dublincore.view" />
+  </permissions>
+
+  <!-- instance -->
+  <include file="instance.zcml" />
+
+  <!-- configure -->
+  <include file="config.zcml" />
+
+  <!-- application process control -->
+  <include package=".process" />
+
+  <!-- bootstrap handler -->
+  <include file="bootstrap.zcml" />
+
+  <!-- translations -->
+  <i18n:registerTranslations directory="locales"/>
+
+  <!-- browser views -->
+  <include package=".browser" />
+
+  <!-- principalannotation -->
+  <include file="principalannotation.zcml" />
+
+  <!-- root folder -->
+  <include file="rootfolder.zcml" />
+
+</configure>

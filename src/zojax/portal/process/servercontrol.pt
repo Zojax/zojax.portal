@@ -1,0 +1,28 @@
+<tal:block i18n:domain="zope">
+  <h2 i18n:translate="">Zope Stub Server Controller</h2>
+
+  <div class="z-form-fieldset">
+    <div class="z-field">
+      <label i18n:translate="">Countdown until restart or shutdown</label>
+      <div class="field">
+	<input type="text" name="time:int" size="5" value="0" />
+	&nbsp;<span i18n:translate="">seconds</span>
+	<p i18n:translate="">
+	  If you specify a time of 0 seconds, then the server
+	  will be shutdown or restarted immediately.
+	</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="z-form-controls">
+    <hr />
+    <div class="controls">
+      <input type="submit" name="restart" value="Restart server"
+	     class="z-form-button" i18n:attributes="value" />
+      &nbsp;
+      <input type="submit" name="shutdown" value="Shutdown server"
+	     class="z-form-button" i18n:attributes="value" />
+    </div>
+  </div>
+</tal:block>

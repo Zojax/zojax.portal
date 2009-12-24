@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <class class="zope.app.principalannotation.PrincipalAnnotationUtility">
+    <factory
+        id="zope.app.PrincipalAnnotationUtility" />
+
+    <implements
+       interface="zope.annotation.interfaces.IAttributeAnnotatable" />
+
+    <require
+        permission="zope.View"
+        interface="zope.app.principalannotation.interfaces.IPrincipalAnnotationUtility" />
+  </class>
+
+  <adapter factory="zope.app.principalannotation.annotations" />
+
+  <adapter
+      for="zope.security.interfaces.IPrincipal *"
+      factory="zope.app.principalannotation.annotations" />
+
+</configure>

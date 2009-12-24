@@ -1,0 +1,165 @@
+=======
+CHANGES
+=======
+
+1.0.3 (2009-09-05)
+------------------
+
+- Add IPortalType marker interface to portal class
+
+
+1.0.2 (2009-08-26)
+------------------
+
+- Remove unused actions code
+
+
+1.0.1 (2009-08-21)
+------------------
+
+- Use workspaces management api
+
+- Update template styles
+
+
+1.0.0 (2009-08-12)
+------------------
+
+- Added zojax.principal.ban
+
+- Removed zojax.ui.rotterdam
+
+- Update test for chameleon enabled setup
+
+- Use ILayoutFormLayer for any request
+
+
+0.102 (2009-06-23)
+------------------
+
+- Install zojax portal as instance root object
+
+- Added default permissions
+
+- Add application control configlet
+
+- Prevent portlet updates on skin config
+
+- Copyright changed to 'Zope Foundation and Contributors'
+
+
+0.101 (2009-05-05)
+------------------
+
+- Added activity system support
+
+- Do not allow copy/move portal objects
+
+- Do not use z3c.autoinclude
+
+
+0.100 (2009-04-02)
+------------------
+
+- Create default member role
+
+- Allow personal spaces for member
+
+- Enable 'people', 'news', 'documents' workspaces by default
+
+- Added 'zojax.portlets.htmlsource' as dependency
+
+- Added 'zojax.personal.invitation' as dependency
+
+
+0.99.4 (2009-03-15)
+-------------------
+
+- Use new edit content wizard
+
+- Cleanup dependencies
+
+
+0.99.3 (2008-01-07)
+-------------------
+
+- Use new zojax.portlet api
+
+
+0.99.2 (2008-12-18)
+-------------------
+
+- Removed zojax.personal.xxxdependencies
+
+- Removed zope.modulealias from exclude.zcml
+
+
+0.99.1 (2008-11-27)
+-------------------
+
+- Use portlet managers configuration from
+  zojax.portletextension
+
+- Added css registry configlet (zojax.ui.cssregistry)
+
+- Moved overrided zope component views to zojax.ui.rotterdam
+
+
+0.99.0 (2008-11-23)
+-------------------
+
+- Added tests
+
+- Update dependencies
+
+
+0.12.0 (2008-09-10)
+-------------------
+
+- Updated dependencies
+
+
+0.11.1 (2008-03-04)
+-------------------
+
+- Added configlet for site components
+
+
+0.11 (2008-02-28)
+-----------------
+
+- Use z3c.autoinclude
+
+- buildout config changed
+
+- Code cleanup
+
+
+0.10.7 (2008-02-20)
+-------------------
+
+- Use zojax.layoutform
+
+
+0.10.3 (2008-02-18)
+-------------------
+
+- Zope3 CA registrations configlet restored
+
+
+0.10.2 (2008-02-06)
+------------------
+
+- Added configuration for 'zojax' cms
+
+
+0.10.1 (2008-02-05)
+------------------
+
+- Added license header to python files
+
+
+0.10 (2008-02-01)
+------------------
+
+- Initial release.
