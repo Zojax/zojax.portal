@@ -1,0 +1,92 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.portal">
+
+  <!-- space view -->
+  <browser:defaultView
+     name="index.html"
+     for="..instance.Portal" />
+
+  <browser:page
+     name="index.html"
+     for="..instance.Portal"
+     class="zojax.content.space.browser.space.ContentSpace"
+     permission="zojax.AccessPortal" />
+
+  <!-- personal bar action -->
+  <browser:viewlet
+     name="portal.settings"
+     manager="zojax.personal.bar.interfaces.IPersonalBar"
+     template="personalbar.pt"
+     class=".personalbar.ControlPanelMenuItem"
+     permission="zope.Public" />
+
+  <!-- portal access -->
+  <zojax:pagelet
+     name="access"
+     type="form.subform"
+     for="..interfaces.IPortal
+	  zojax.content.forms.interfaces.ISecurityStep"
+     template="access.pt"
+     class=".access.PortalAccessSettings"
+     provides="zojax.layoutform.interfaces.IPageletFormView"
+     permission="zojax.ModifyContent"
+     weight="0" />
+
+  <!-- root publisher -->
+  <adapter
+     for="..instance.Portal *"
+     factory="z3c.traverser.traverser.PluggableTraverser"
+     provides="zope.publisher.interfaces.IPublishTraverse" />
+
+  <subscriber
+     for="..instance.Portal *"
+     provides="z3c.traverser.interfaces.ITraverserPlugin"
+     factory="zojax.content.space.browser.publisher.PublisherPlugin" />
+
+  <!-- zmi actions -->
+  <browser:page
+     name="reconfigure.html"
+     for="..interfaces.IPortal"
+     class=".reconfigure.Reconfigure"
+     attribute="sendEvent"
+     permission="zojax.Configure" />
+
+  <class class="..instance.Portal">
+    <implements interface="zojax.skintool.interfaces.ISkinable" />
+  </class>
+
+  <!-- base registry -->
+  <utility
+     name="zojax.portal.baseComponents"
+     component=".base.BaseComponentsVocabulary"
+     provides="zope.schema.interfaces.IVocabularyFactory" />
+  
+  <zojax:pagelet
+     name="index.html"
+     for="..interfaces.IPortalRegistries"
+     class=".base.SetBasesPage"
+     permission="zope.ManageServices" />
+
+  <!-- ca registrations -->
+  <browser:page
+     name="index.html"
+     for="..interfaces.IPortalRegistrations"
+     class=".registrations.PortalRegistrationView"
+     permission="zope.ManageServices" 
+     layer="zojax.theme.default.interfaces.ISkinLayer" />
+
+  <adapter factory=".registration.AdapterSiteRegistrationDisplay" />
+
+  <!-- folder views -->
+  <browser:containerViews
+     for="zope.app.folder.interfaces.IFolder"
+     contents="zope.ManageContent"
+     index="zope.View"
+     add="zope.ManageContent"
+     zcml:condition="installed zope.app.folder" />
+
+</configure>

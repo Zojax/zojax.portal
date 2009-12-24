@@ -1,0 +1,34 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+	   xmlns:zcml="http://namespaces.zope.org/zcml">
+  
+  <!-- exclude will prevent from include -->
+  <exclude package="zope.error" />
+  <exclude package="zope.app.error" />
+  <exclude package="zope.session" file="subscribers.zcml" />
+  <exclude package="zope.app.schema" file="meta.zcml" />
+  <exclude package="zope.app.component.browser" file="meta.zcml" />
+  <exclude package="zope.app.broken" file="browser.zcml" />
+  <exclude package="zope.app.container.browser" />
+  <exclude package="zope.app.folder.browser" />
+  <exclude package="zope.app.generations.browser" />
+  <exclude package="zope.app.applicationcontrol.browser" />
+  <exclude package="zope.app.i18n.browser" />
+  <exclude package="zope.app.intid.browser" />
+  <exclude package="zope.app.securitypolicy.browser" />
+  <exclude package="zope.app.appsetup" />
+  <exclude package="zope.app.content" />
+  <exclude package="zope.app.schema" />
+  <exclude package="zope.app.zapi" />
+  <exclude package="zope.app.principalannotation" />
+  <exclude package="zope.dublincore.browser" />
+  <exclude package="zope.principalannotation"
+	   zcml:condition="installed zope.principalannotation" />
+
+  <!-- z3c exclude -->
+  <exclude package="z3c.baseregistry.browser" />
+  <exclude package="z3c.configurator.browser" />
+
+  <!-- zc.copy -->
+  <exclude package="zc.copy" file="overrides.zcml" />
+
+</configure>
