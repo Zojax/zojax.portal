@@ -14,7 +14,6 @@
   <exclude package="zope.app.applicationcontrol.browser" />
   <exclude package="zope.app.i18n.browser" />
   <exclude package="zope.app.intid.browser" />
-  <exclude package="zope.app.securitypolicy.browser" />
   <exclude package="zope.app.appsetup" />
   <exclude package="zope.app.content" />
   <exclude package="zope.app.schema" />
