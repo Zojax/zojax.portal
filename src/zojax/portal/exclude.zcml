@@ -18,7 +18,6 @@
   <exclude package="zope.app.appsetup" />
   <exclude package="zope.app.content" />
   <exclude package="zope.app.schema" />
-  <exclude package="zope.app.zapi" />
   <exclude package="zope.app.principalannotation" />
   <exclude package="zope.dublincore.browser" />
   <exclude package="zope.principalannotation"
