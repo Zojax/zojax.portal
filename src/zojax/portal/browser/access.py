@@ -30,7 +30,7 @@ class PortalAccessSettings(PageletEditSubForm):
 
     weight = 0
 
-    def extractData(self):
+    def extractData(self, setErrors=True):
         return {}, ()
 
     def update(self):
