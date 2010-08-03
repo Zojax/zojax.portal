@@ -15,6 +15,7 @@
 
 $Id$
 """
+from zojax.site.interfaces import ISite
 from zope.app.component.hooks import getSite
 from zope.traversing.interfaces import IContainmentRoot
 
@@ -22,7 +23,7 @@ from zope.traversing.interfaces import IContainmentRoot
 class ApplicationControlConfiglet(object):
 
     def isAvailable(self):
-        if not IContainmentRoot.providedBy(getSite()):
+        if ISite.providedBy(getSite()):
             return False
 
         return super(ApplicationControlConfiglet, self).isAvailable()
