@@ -15,15 +15,16 @@
 
 $Id$
 """
-from zojax.site.interfaces import ISite
 from zope.app.component.hooks import getSite
 from zope.traversing.interfaces import IContainmentRoot
+
+from zojax.portal.interfaces import IPortal
 
 
 class ApplicationControlConfiglet(object):
 
     def isAvailable(self):
-        if ISite.providedBy(getSite()):
+        if not IPortal.providedBy(getSite()):
             return False
 
         return super(ApplicationControlConfiglet, self).isAvailable()

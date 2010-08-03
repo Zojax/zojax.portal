@@ -21,8 +21,12 @@ from zope.app.pagetemplate import ViewPageTemplateFile
 from zope.app.generations.interfaces import ISchemaManager
 from zope.app.generations.generations import generations_key, Context
 from zope.app.renderer.rest import ReStructuredTextToHTMLRenderer
+from zope.app.component.hooks import getSite
 
+from zojax.statusmessage.interfaces import IStatusMessage
 from zojax.wizard.step import WizardStep
+
+from zojax.portal.interfaces import _
 
 request_key_format = "evolve-app-%s"
 
@@ -37,9 +41,8 @@ class GenerationsView(WizardStep):
     def update(self):
         self.managers = managers = dict(
             zope.component.getUtilitiesFor(ISchemaManager))
-
-        db = self._getdb()
-        conn = db.open()
+        savepoint = transaction.savepoint(optimistic = True)
+        conn = getSite()._p_jar
         try:
             generations = conn.root().get(generations_key, ())
             request = self.request
@@ -58,13 +61,16 @@ class GenerationsView(WizardStep):
                     generation += 1
                     manager.evolve(context, generation)
                     generations[key] = generation
-                    transaction.commit()
+                    transaction.savepoint(optimistic = True)
                     IStatusMessage(self.request).add(
                         _('The database was updated to generation ${generation} for ${application}.',
                           mapping={'application': key, 'generation':generation}))
-        finally:
-            transaction.abort()
-            conn.close()
+        except:
+            try:
+                savepoint.rollback()
+            except TypeError:
+                pass
+            raise
 
     def applications(self):
         result = []
