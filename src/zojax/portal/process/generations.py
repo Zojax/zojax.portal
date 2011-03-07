@@ -65,6 +65,7 @@ class GenerationsView(WizardStep):
                     IStatusMessage(self.request).add(
                         _('The database was updated to generation ${generation} for ${application}.',
                           mapping={'application': key, 'generation':generation}))
+                    self.redirect(request.getURL())
         except:
             try:
                 savepoint.rollback()
