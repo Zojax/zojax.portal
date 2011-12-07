@@ -1,4 +1,4 @@
-<tal:block i18n:domain="zope">
+<tal:block i18n:domain="zojax.portal">
   <h2 i18n:translate="">Zope Stub Server Controller</h2>
 
   <div class="z-form-fieldset">

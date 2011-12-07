@@ -1,4 +1,4 @@
-<tal:block tal:define="runtime_info view/runtimeInfo" i18n:domain="zope">
+<tal:block tal:define="runtime_info view/runtimeInfo" i18n:domain="zojax.portal">
   <h2 i18n:translate="">Zope Runtime Information</h2>
 
   <div class="z-table-container">
