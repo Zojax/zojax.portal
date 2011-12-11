@@ -52,7 +52,7 @@
 	to Generation <b i18n:name="to" tal:content="evolver/to"/>
       </h3>
       <br />
-      <div tal:content="structure evolver/info" i18n:translate="">
+      <div tal:content="structure evolver/info">
 	Evolution information.
       </div>
     </tal:block>

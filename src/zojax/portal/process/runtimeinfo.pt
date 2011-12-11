@@ -6,7 +6,7 @@
       <tbody>
 	<tr class="even">
 	  <th i18n:translate="">Uptime</th>
-	  <td i18n:translate="" tal:content="runtime_info/Uptime">Time</td>
+	  <td tal:content="runtime_info/Uptime">Time</td>
 	</tr>
 	<tr class="odd">
 	  <th i18n:translate="">System platform</th>
