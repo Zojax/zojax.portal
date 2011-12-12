@@ -1,4 +1,4 @@
-<tal:block tal:define="runtime_info view/runtimeInfo" i18n:domain="zope">
+<tal:block tal:define="runtime_info view/runtimeInfo" i18n:domain="zojax.portal">
   <h2 i18n:translate="">Zope Runtime Information</h2>
 
   <div class="z-table-container">
@@ -6,7 +6,7 @@
       <tbody>
 	<tr class="even">
 	  <th i18n:translate="">Uptime</th>
-	  <td i18n:translate="" tal:content="runtime_info/Uptime">Time</td>
+	  <td tal:content="runtime_info/Uptime">Time</td>
 	</tr>
 	<tr class="odd">
 	  <th i18n:translate="">System platform</th>

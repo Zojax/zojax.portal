@@ -1,4 +1,4 @@
-<tal:block i18n:domain="zope" tal:define="evolvers view/getEvolvers">
+<tal:block i18n:domain="zojax.portal" tal:define="evolvers view/getEvolvers">
   <tal:block tal:condition="not:evolvers">
     <h2 i18n:translate="">Database generations</h2>
 
@@ -27,7 +27,8 @@
 	    <td tal:content="app/generation">2</td>
 	    <td>
 	      <input type="submit" value="evolve" name="evolve"
-		     tal:condition="app/evolve" tal:attributes="name app/evolve">
+	             i18n:attributes="value"
+		     tal:condition="app/evolve" tal:attributes="name app/evolve" />
 	      <span tal:condition="not: app/evolve"
 		    i18n:translate="">No, up to date</span>
 	    </td>
@@ -58,7 +59,7 @@
     
     <div class="z-form-controls">
       <hr />
-      <input type="submit" class="z-form-button" value="Back" />
+      <input type="submit" class="z-form-button" value="Back" i18n:attributes="value" />
     </div>
   </tal:block>
 </tal:block>
