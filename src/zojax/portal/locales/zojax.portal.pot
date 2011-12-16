@@ -1,0 +1,348 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: Development/Unknown\n"
+"POT-Creation-Date: Sun Dec 11 10:42:49 2011\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#: src/zojax/portal/browser/access.pt:1
+msgid "Portal Access Settings"
+msgstr ""
+
+#: src/zojax/portal/browser/access.pt:10
+msgid "Open"
+msgstr ""
+
+#: src/zojax/portal/browser/access.pt:11
+msgid "Anyone can view site data."
+msgstr ""
+
+#: src/zojax/portal/browser/access.pt:21
+msgid "Private"
+msgstr ""
+
+#: src/zojax/portal/browser/access.pt:22
+msgid "Only authenticated members can view site data."
+msgstr ""
+
+#: src/zojax/portal/browser/access.pt:29
+msgid "Save"
+msgstr ""
+
+#: src/zojax/portal/browser/access.py:57
+msgid "Portal access settings has been changed."
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:35
+msgid "Bases"
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:36
+msgid "The base components registires of this registry."
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:41
+msgid "-- Broken Registry --"
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:42
+msgid "-- Global Base Registry --"
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:61
+msgid "Components registry"
+msgstr ""
+
+#: src/zojax/portal/browser/base.py:70
+msgid "Apply"
+msgstr ""
+
+#: src/zojax/portal/browser/personalbar.pt:1
+msgid "System settings"
+msgstr ""
+
+#: src/zojax/portal/browser/registration.py:62
+#. Default: ""
+msgid "comment: ${comment}"
+msgstr ""
+
+#: src/zojax/portal/browser/registration.py:69
+#. Default: ""
+msgid "${provided} utility named '${name}'"
+msgstr ""
+
+#: src/zojax/portal/browser/registration.py:72
+#. Default: ""
+msgid "${provided} utility"
+msgstr ""
+
+#: src/zojax/portal/browser/registrations.pt:13
+msgid "Utilities, Adapters"
+msgstr ""
+
+#: src/zojax/portal/browser/registrations.pt:30
+msgid "${name} (moved or deleted)"
+msgstr ""
+
+#: src/zojax/portal/browser/registrations.pt:4
+msgid "Nothing is registered for this site."
+msgstr ""
+
+#: src/zojax/portal/browser/registrations.pt:51
+msgid "Unregister"
+msgstr ""
+
+#: src/zojax/portal/browser/registrations.pt:7
+msgid "Registrations for this portal"
+msgstr ""
+
+#: src/zojax/portal/configure.zcml:12
+msgid "Zope CA registrations"
+msgstr ""
+
+#: src/zojax/portal/configure.zcml:18
+msgid "Zope CA registries"
+msgstr ""
+
+#: src/zojax/portal/configure.zcml:8
+msgid "Access portal"
+msgstr ""
+
+#: src/zojax/portal/instance.zcml:12
+msgid "A portal."
+msgstr ""
+
+#: src/zojax/portal/instance.zcml:12
+msgid "Portal"
+msgstr ""
+
+#: src/zojax/portal/interfaces.py:29
+msgid "Title"
+msgstr ""
+
+#: src/zojax/portal/interfaces.py:30
+msgid "Portal title."
+msgstr ""
+
+#: src/zojax/portal/interfaces.py:34
+msgid "Description"
+msgstr ""
+
+#: src/zojax/portal/interfaces.py:35
+msgid "Portal description."
+msgstr ""
+
+#: src/zojax/portal/process/configure.zcml:7
+msgid "This configlet provides runtime information for application control and zope version."
+msgstr ""
+
+#: src/zojax/portal/process/configure.zcml:7
+msgid "Zope application control"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:10
+msgid "Minimum Generation"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:11
+msgid "Maximum Generation"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:12
+msgid "Current Database Generation"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:13
+msgid "Evolve?"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:29
+msgid "evolve"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:3
+msgid "Database generations"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:32
+msgid "No, up to date"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:43
+msgid "${application_id} Application Manager Details"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:52
+msgid "Evolver from Generation ${from} to Generation ${to}"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:62
+msgid "Back"
+msgstr ""
+
+#: src/zojax/portal/process/generations.pt:9
+msgid "Application"
+msgstr ""
+
+#: src/zojax/portal/process/generations.py:56
+#. Default: ""
+msgid "The database is up to date for ${application}."
+msgstr ""
+
+#: src/zojax/portal/process/generations.py:66
+#. Default: ""
+msgid "The database was updated to generation ${generation} for ${application}."
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:12
+msgid "System platform"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:16
+msgid "Zope version"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:2
+msgid "Zope Runtime Information"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:20
+msgid "Python version"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:24
+msgid "Command line"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:28
+msgid "Preferred encoding"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:32
+msgid "FileSystem encoding"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:36
+msgid "Process id"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:40
+msgid "Developer mode"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:47
+msgid "Python path"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.pt:8
+msgid "Uptime"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.py:38
+msgid "Unavailable"
+msgstr ""
+
+#: src/zojax/portal/process/runtimeinfo.py:68
+#. Default: ""
+msgid "${days} day(s) ${hours}:${minutes}:${seconds}"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:10
+msgid "If you specify a time of 0 seconds, then the server will be shutdown or restarted immediately."
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:2
+msgid "Zope Stub Server Controller"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:21
+msgid "Restart server"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:24
+msgid "Shutdown server"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:6
+msgid "Countdown until restart or shutdown"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.pt:9
+msgid "seconds"
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.py:40
+#. Default: ""
+msgid "The server will be restarted in ${number} seconds."
+msgstr ""
+
+#: src/zojax/portal/process/servercontrol.py:45
+#. Default: ""
+msgid "The server will be shutdown in ${number} seconds."
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:10
+msgid "Database Name"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:11
+msgid "Size"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:2
+msgid "ZODB Controller"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:37
+msgid "Keep up to"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:41
+msgid "days"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:47
+#. Default: "Pack"
+msgid "pack-button"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:8
+msgid "Pack"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.pt:9
+msgid "Utility Name"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.py:57
+msgid "Error: Invalid Number"
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.py:65
+#. Default: ""
+msgid "ZODB \"${name}\" successfully packed."
+msgstr ""
+
+#: src/zojax/portal/process/zodbcontrol.py:69
+#. Default: ""
+msgid "ERROR packing ZODB \"${name}\": ${err}"
+msgstr ""
+
