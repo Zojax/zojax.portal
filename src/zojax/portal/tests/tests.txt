@@ -84,27 +84,27 @@ People workspace
     >>> actor.open('http://localhost/context.html/content/')
     >>> actor.getLink('Workspaces').click()
     >>> print actor.contents
-    <!DOCTYPE html PUBLIC
+    <!DOCTYPE ...
     ...
-    <div class="z-listing-details">
-        <span>Overview</span>
+      <div class="z-listing-details">
+        <label for="workspaces-widgets-workspaces-0">Overview</label>
         <div>Space customizable overview.</div>
-    </div>
+      </div>
     ...
-    <div class="z-listing-details">
-        <span>News</span>
+      <div class="z-listing-details">
+        <label for="workspaces-widgets-workspaces-1">News</label>
         <div>A news workspace that will show all space news.</div>
-    </div>
+      </div>
     ...
-    <div class="z-listing-details">
-        <span>Documents</span>
+      <div class="z-listing-details">
+        <label for="workspaces-widgets-workspaces-2">Documents</label>
         <div>Documents workspace.</div>
-    </div>
+      </div>
     ...
-    <div class="z-listing-details">
-        <span>People</span>
+      <div class="z-listing-details">
+        <label for="workspaces-widgets-workspaces-4">People</label>
         <div>Personal spaces for members.</div>
-    </div>
+      </div>
     ...
     </html>
 
@@ -161,17 +161,8 @@ Open
     >>> print anonymous.contents
     <!DOCTYPE html PUBLIC...
     ...
-    ...<div class="z-portlet portlet-recent-content ">
-      <h2 class="z-portlet-header">
-        <a class="z-portlet-feed" title="RSS feed" href="http://localhost/@@feeds/contents">
-          <img src="http://localhost/@@/rss-icon.png" />
-        </a>
-        Recent content
-      </h2>
-      <div class="z-portlet-body">
-        ...
-      </div>
-    </div>...
+      <span id="z-breadcrumbs-you-are-here">You are here:</span>
+          <a href="http://localhost/">Portal</a>
     ...
     </html>
 
